@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+<header class="caption">
+    <h1>Программа Яндекса «Заказ на Маркете»</h1>
+    <p>Что это? Как начать пользоваться?</p>
+</header>
+<section class="slide" id="cover">
+    <h2>Программа Яндекса <br/>«Заказ на Маркете»</h2>
+    <p>Что это? Как начать пользоваться?</p>
+    <img src="pictures/cover.jpg" alt="" class="cover">
+    <!--
+        To apply styles to the certain slides
+        set slide ID to get needed elements
+        -->
+    <style>
+        #cover h2 {
+            margin: 30px 0 0;
+            color: #FFF;
+            text-align: center;
+            font-size: 70px;
+        }
+
+        #cover p {
+            margin: 10px 0 0;
+            text-align: center;
+            color: #2f6fad;
+            font-style: italic;
+            font-size: 20px;
+        }
+
+
+    </style>
+</section>
+<section class="slide">
+    <h2>Программа «Заказ на Маркете»</h2>
+    <p>Программа «Заказ на Маркете» — это размещение предложений на Яндекс.Маркете по модели оплаты за действие (Cost per Action, CPA):</p>
+    <ol>
+        <li>Покупатели добавляют товары вашего магазина в корзину на Яндекс.Маркете и оформляют заказ прямо на сервисе.</li>
+        <li>Оформленные заказы поступают в ваш магазин — вы платите только за готовые заказы.</li>
+    </ol>
+    <p>Программа доступна для всех интернет-магазинов, размещающихся на Яндекс.Маркете.</p>
+</section>
+<section class="slide">
+    <h2>Преимущества для магазина</h2>
+    <p>При обычном размещении на Яндекс.Маркете магазин оплачивает все переходы на его сайт, однако лишь часть таких переходов конвертируется в покупку. Участвуя в программе «Заказ на Маркете», вы получаете не потенциального покупателя, а уже оформленный заказ. Конверсия в заказ происходит на стороне сервиса, и вы не теряете деньги.</p>
+</section>
+<section class="slide">
+    <h2>Сколько это стоит?</h2>
+    <p>За заказ с постоплатой магазин оплачивает комиссию 2% от стоимости заказа.
+        На заказ с предоплатой Яндекс.Маркет предоставляет магазину скидку и не взимает с него комиссию за заказ. Магазин оплачивает только комиссию за проведение оплаты (2%).</p>
+</section>
+<section class="slide">
+    <h2>Как начать пользоваться?</h2>
+    <ol>
+        <li>На странице настроек размещения включить «Заказ на Маркете», указать режим приема заказов через API, подать заявку на прием предоплаты</li>
+        <li class="next">Включить модуль «Yandex.Market order»</li>
+        <li class="next">На странице настроек API заказа указать параметры для запросов от Маркета к магазину</li>
+        <li class="next">В админке модуля «Yandex.Market order» указать параметры для ответов/запросов магазина Маркету</li>
+    </ol>
+</section>
+<section class="slide">
+    <img src="pictures/settings_placement.jpg" alt="" class="cover">
+</section>
+<section class="slide">
+    <img src="pictures/settings_placement2.jpg" alt="" class="cover">
+</section>
+<section class="slide">
+    <h2>Страница настроек API заказа. Немного технического языка :)</h2>
+    <ul class="double">
+        <li>Авторизационный токен: токен, передываемый при каждом запросе от Маркета к магазину</li>
+        <li>URL API: URL, по которому Маркет отправляет запросы на создание/отмену заказа</li>
+        <li>SHA1 fingerprint: уникальный ключ для SSL-сертификата</li>
+        <li>Тип авторизации: будет ли передан авторизационный токен в заголовке или как пареметр запроса</li>
+        <li>Формат данных: в json или xml Маркет отправляет запросы на создание/отмену заказа</li>
+    </ul>
+</section>
+<section class="slide">
+    <img src="pictures/settings_api.jpg" alt="" class="cover">
+</section>
+<section class="slide">
+    <h2>Админка модуля «Yandex.Market order»</h2>
+    <ul class="double">
+        <li>ID приложения/авторизационный токен на Яндекс.OAuth</li>
+        <li>Кампания для подключения к «Заказу на Маркете»</li>
+        <li>Прайс-лист кампании</li>
+        <li>Имя службы доставки</li>
+        <li>Цена доставки</li>
+        <li>Длительность доставки</li>
+    </ul>
+</section>
+<section class="slide">
+    <img src="pictures/settings_admin.jpg" alt="" class="cover">
+</section>
+<section class="slide">
+    <h2 class="shout">Это все?</h2>
+</section>
+<section class="slide">
+    <h2>Контрольный заказ</h2>
+    <p>Для того чтобы заработала программа необходимо пройти контрольный заказ. Это набор тестовых заказов от Маркета различной сложности, для проверки корректной работы магазина.</p>
+</section>
+<section class="slide">
+    <h2>Все!</h2>
+    <p>Теперь можно принимать заказы с Маркета. Деньги на счет магазина поступят на следующий банковский день после перевода заказа в статус «Передан в доставку»</p>
+</section>
+<section class="slide">
+    <img src="pictures/result.jpg" alt="" class="cover">
+</section>
+<section class="slide" id="end">
+    <h2 class="shout shrink">Спасибо за внимание!</h2>
+    <style>
+        #end h2 {
+            color: #2f6fad;
+        }
+    </style>
+</section>
+
+<!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+<div class="progress"></div>
+<script src="node_modules/shower-core/shower.min.js"></script>
+<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
